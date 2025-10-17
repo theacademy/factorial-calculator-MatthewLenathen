@@ -34,12 +34,16 @@ public class Factorial {
 		*/
 
 		//YOUR CODE STARTS HERE
+		String userInput = scanner.nextLine();
 
-		return -1;
-
+		// Using regex to match numbers 1 to 10 and nothing else
+		if(userInput.matches("\\b([1-9]|10)\\b")){
+			return Integer.parseInt(userInput); // return input as an int
+		}else {
+			this.printStream.print("Invalid entry. Please enter an integer between 1 and 10, inclusive.");
+			return -1;
+		}
 		//YOUR CODE ENDS HERE
-		 
-			
 	 }
 	
 	 
@@ -53,9 +57,10 @@ public class Factorial {
 		 
 		int result = 1;
 		//YOUR CODE STARTS HERE
-
- 
-
+		 // Loop starting at 2, because result is already 1. e.g. 1 * 2 * 3..
+		for(int i = 2;i <=num;i++){
+			result*=i;
+		}
 		//YOUR CODE ENDS HERE
 		this.printStream.print("The Factorial is: " + result);		
 		
